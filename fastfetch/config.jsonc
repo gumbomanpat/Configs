@@ -1,0 +1,94 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type":"kitty-direct",
+        "source": "/home/patrick/Downloads/icons2/Arch-600x600.png",
+        "width": 30,
+        "height": 18
+    },
+    "display": {
+        "separator": "|",
+        "color": "white"
+    }, 
+    "modules": [
+        {
+            "type": "title", 
+            "color": {
+            "user": "white",
+            "at": "white", 
+            "host": "white"
+            }
+        },  
+    "separator",
+    {
+      "type": "command", 
+      "shell": "/bin/bash",
+      "text": "curl wttr.in/cth?format=%f%t",
+      "key": "🌡",
+      "keyColor": "red"
+    },
+    {
+      "type": "os",
+      "key": "󰣇",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "kernel",
+      "key": "",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "uptime",
+      "key": "",
+      "keyColor": "green"
+    },
+        {
+      "type": "shell",
+      "key": "",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "wm",
+      "key": "",
+      "keyColor": "red"
+    },
+    {
+      "type": "cursor",
+      "key": "",
+      "keyColor": "blue"
+    },
+    {
+      "type": "terminal",
+      "key": "",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "terminalfont",
+      "key": "",
+      "keyColor": "red"
+    },
+    {
+      "type": "cpu",
+      "key": "",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "gpu",
+      "key": "",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "memory",
+      "key": "",
+      "keyColor": "green"
+    },
+      {
+      "type": "disk",
+      "key": "",
+      "keyColor": "magenta"
+    },
+    "break",
+    "colors"
+    ]
+
+}
