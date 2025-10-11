@@ -1,0 +1,85 @@
+{
+  "layer": "top",  //WWaybar at top layer
+  "position": "top", //WWaybar position (top|bottom|left|right)
+  "height": 30, // Waybar height (to be removed from auto height)
+  // "width": 1280, //WWWaybar width
+  "spacing": 4, // Gaps between modules (4px)
+  "modules-left": ["custom/logo", "hyprland/workspaces"],
+  "modules-center": ["hyprland/window", "tray"],
+  "modules-right": ["network", "cpu", "memory", "disk", "pulseaudio", "battery", "clock", "bluetooth"],
+  
+
+  "clock": {
+    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}% {time}",
+    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
+    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-time": "{H}:{M}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "custom/diskfree": {
+        "format": "🖴 Disk: {} used",
+	      "interval": 300,
+        "max-length": 20,
+        "exec": "df --total -hl | grep 'sda1' | awk '{print $5}'"
+  },
+  "disk": {
+      "interval": 300, 
+      "path": "/home",
+      "format": "🖴  Disk: {free}"
+  }, 
+   "memory": {
+        "interval": 5,
+        "format": "󰍛  Mem: {}%",
+        "max-length": 15
+  },
+  "cpu": {
+        "format": "⧯ Cpu: {usage}%" ,
+        "tooltip": true
+  },
+  "custom/kernel": {
+        "format": "❤ {}",
+	      "interval": 3600,
+        "max-length": 20,
+        "exec": "uname -r",
+        "tooltip": false
+  },
+  "network": {
+    "format-wifi": "{essid}",
+    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭  </span> Disconnected",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+  },
+  "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-muted": "",
+      "format-icons": {
+          "default": ["", "", " "]
+      },
+      "on-click": "pavucontrol"
+  },
+  "custom/logo": {
+        "format": "  ",
+        "tooltip": false,
+        "on-click": "~/.config/rofi/launchers/misc/launcher.sh &"
+    },
+  "bluetooth": {
+	"format": " {status}",
+	"format-connected": " {device_alias}",
+	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+ }
+}
