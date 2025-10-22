@@ -17,6 +17,6 @@ alias commit "git commit -m"
 
 
 eval (ssh-agent -c)
-ssh-add  ~/.ssh/github
+#ssh-add  ~/.ssh/github
 
 
