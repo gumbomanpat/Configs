@@ -14,7 +14,7 @@ alias bpy "bpytop"
 alias add "git add -A"
 alias push "git push origin"
 alias commit "git commit -m"
-
+alias cm "cmatrix -r"
 
 eval (ssh-agent -c)
 #ssh-add  ~/.ssh/github
